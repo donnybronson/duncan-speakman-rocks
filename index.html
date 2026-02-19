@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sound Grid</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="title">Sound Grid</h1>
+        <div class="status" id="status">Loading sounds…</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="panel" aria-label="Sound pads">
+        <div class="grid" id="grid" role="grid" aria-label="Sound buttons"></div>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
