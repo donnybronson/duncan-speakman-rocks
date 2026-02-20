@@ -16,10 +16,19 @@ function numericSort(a, b) {
 }
 
 function labelFromFilename(filename) {
+  // remove extension
   const base = filename.replace(/\.[^.]+$/, "");
-  // optional: strip leading track numbers like "01-" or "01 "
-  const stripped = base.replace(/^\s*\d+\s*[-_. ]\s*/, "");
-  return stripped.replace(/[_-]+/g, " ").trim();
+
+  // extract leading number
+  const match = base.match(/^\d+/);
+
+  // if a number exists, use it
+  if (match) {
+    return match[0];
+  }
+
+  // fallback if no number exists
+  return base;
 }
 
 async function main() {
