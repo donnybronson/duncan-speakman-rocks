@@ -18,23 +18,26 @@ function numericSort(a, b) {
 function parseLabels(filename) {
   const base = filename.replace(/\.[^.]+$/, ""); // strip extension
 
-  // leading digits (if present)
-  const m = base.match(/^(\d+)\s*[-_. ]?\s*(.*)$/);
+  // leading number + rest
+  const m = base.match(/^(\d+)\s*(.*)$/);
+  const number = m ? (m[1] ?? "") : "";
+  let rest = m ? (m[2] ?? "") : base;
 
-  if (!m) {
-    // no leading number
-    return { number: "", name: base };
+  // detect subtle prefix after number
+  // accepts: 01--Subtle-Thing, 01 --Subtle-Thing, 01--subtle-Thing
+  const subtleMatch = rest.match(/^\s*--subtle-\s*(.*)$/i);
+
+  let kind = "name";
+  if (subtleMatch) {
+    kind = "subtle";
+    rest = subtleMatch[1] ?? "";
   }
 
-  const number = m[1] ?? "";
-  const restRaw = m[2] ?? "";
-
-  // clean the name (rest of filename)
-  const name = restRaw
+  const name = (rest || base)
     .replace(/[_-]+/g, " ")
     .trim();
 
-  return { number, name: name || base };
+  return { number, name, kind };
 }
 
 async function main() {
@@ -47,10 +50,10 @@ async function main() {
 
   console.log(`Found ${files.length} audio file(s).`);
 
-  const manifest = files.map((filename) => {
-    const { number, name } = parseLabels(filename);
-    return { filename, number, name };
-  });
+ const manifest = files.map((filename) => {
+  const { number, name, kind } = parseLabels(filename);
+  return { filename, number, name, kind };
+});
 
   await writeFile(OUT_FILE, JSON.stringify(manifest, null, 2), "utf8");
   console.log("Wrote:", OUT_FILE);

@@ -1,6 +1,8 @@
 const gridEl = document.getElementById("grid");
 const statusEl = document.getElementById("status");
 const toggleBtn = document.getElementById("toggleLabels");
+const ledSubtleBtn = document.getElementById("toggleLedSubtle");
+const ledNameBtn = document.getElementById("toggleLedName");
 
 let showNames = false;
 
@@ -78,7 +80,11 @@ function makePad(item) {
   btn.dataset.number = number;
   btn.dataset.name = name;
 
-  // IMPORTANT: only one visible label element
+  // ADD THIS:
+  const kind = item.kind === "subtle" ? "subtle" : "name";
+  btn.classList.add(`pad--${kind}`);
+  btn.dataset.kind = kind;
+
   btn.innerHTML = `<div class="pad__label"></div>`;
   renderPadLabel(btn);
 
@@ -142,6 +148,28 @@ async function init() {
         applyToggleUI();
       }
     });
+
+
+
+    function wireBodyToggle(btn, bodyClass) {
+  if (!btn) return;
+
+  const apply = () => {
+    const on = document.body.classList.contains(bodyClass);
+    btn.setAttribute("aria-pressed", String(on));
+  };
+
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle(bodyClass);
+    apply();
+  });
+
+  apply();
+}
+
+wireBodyToggle(ledSubtleBtn, "led-subtle-on");
+wireBodyToggle(ledNameBtn, "led-name-on");
+
 
     applyToggleUI();
   } catch (err) {

@@ -2,186 +2,223 @@
   {
     "filename": "00--Subtle-Instructions.mp3",
     "number": "00",
-    "name": "Subtle Instructions"
+    "name": "Instructions",
+    "kind": "subtle"
   },
   {
     "filename": "01-Anya.mp3",
     "number": "01",
-    "name": "Anya"
+    "name": "Anya",
+    "kind": "name"
   },
   {
     "filename": "03-Bas.mp3",
     "number": "03",
-    "name": "Bas"
+    "name": "Bas",
+    "kind": "name"
   },
   {
     "filename": "04--Subtle-things.mp3",
     "number": "04",
-    "name": "Subtle things"
+    "name": "things",
+    "kind": "subtle"
   },
   {
     "filename": "05-Ben-j.mp3",
     "number": "05",
-    "name": "Ben j"
+    "name": "Ben j",
+    "kind": "name"
   },
   {
     "filename": "07-Sita.mp3",
     "number": "07",
-    "name": "Sita"
+    "name": "Sita",
+    "kind": "name"
   },
   {
     "filename": "08--Subtle-low-profile.mp3",
     "number": "08",
-    "name": "Subtle low profile"
+    "name": "low profile",
+    "kind": "subtle"
   },
   {
     "filename": "09-Clare-red.mp3",
     "number": "09",
-    "name": "Clare red"
+    "name": "Clare red",
+    "kind": "name"
   },
   {
     "filename": "11-Yannick.mp3",
     "number": "11",
-    "name": "Yannick"
+    "name": "Yannick",
+    "kind": "name"
   },
   {
     "filename": "12--Subtle-hipsters.mp3",
     "number": "12",
-    "name": "Subtle hipsters"
+    "name": "hipsters",
+    "kind": "subtle"
   },
   {
     "filename": "13-parents.mp3",
     "number": "13",
-    "name": "parents"
+    "name": "parents",
+    "kind": "name"
   },
   {
     "filename": "15-KD.mp3",
     "number": "15",
-    "name": "KD"
+    "name": "KD",
+    "kind": "name"
   },
   {
     "filename": "16--Subtle-druqks.mp3",
     "number": "16",
-    "name": "Subtle druqks"
+    "name": "druqks",
+    "kind": "subtle"
   },
   {
     "filename": "17-Jon-d.mp3",
     "number": "17",
-    "name": "Jon d"
+    "name": "Jon d",
+    "kind": "name"
   },
   {
     "filename": "19-Jess.mp3",
     "number": "19",
-    "name": "Jess"
+    "name": "Jess",
+    "kind": "name"
   },
   {
     "filename": "20--Subtle-woolies.mp3",
     "number": "20",
-    "name": "Subtle woolies"
+    "name": "woolies",
+    "kind": "subtle"
   },
   {
     "filename": "21-Flo.mp3",
     "number": "21",
-    "name": "Flo"
+    "name": "Flo",
+    "kind": "name"
   },
   {
     "filename": "23-Sarah anderson.mp3",
     "number": "23",
-    "name": "Sarah anderson"
+    "name": "Sarah anderson",
+    "kind": "name"
   },
   {
     "filename": "24--Subtle-woolies-pt2.mp3",
     "number": "24",
-    "name": "Subtle woolies pt2"
+    "name": "woolies pt2",
+    "kind": "subtle"
   },
   {
     "filename": "25-Malcolm-diack.mp3",
     "number": "25",
-    "name": "Malcolm diack"
+    "name": "Malcolm diack",
+    "kind": "name"
   },
   {
     "filename": "27-Lila.mp3",
     "number": "27",
-    "name": "Lila"
+    "name": "Lila",
+    "kind": "name"
   },
   {
     "filename": "30--Subtle-fft.mp3",
     "number": "30",
-    "name": "Subtle fft"
+    "name": "fft",
+    "kind": "subtle"
   },
   {
     "filename": "31-Kate Yedigaroff.mp3",
     "number": "31",
-    "name": "Kate Yedigaroff"
+    "name": "Kate Yedigaroff",
+    "kind": "name"
   },
   {
     "filename": "33-Tineke.mp3",
     "number": "33",
-    "name": "Tineke"
+    "name": "Tineke",
+    "kind": "name"
   },
   {
     "filename": "34--Subtle-beacon.mp3",
     "number": "34",
-    "name": "Subtle beacon"
+    "name": "beacon",
+    "kind": "subtle"
   },
   {
     "filename": "35-Jo.mp3",
     "number": "35",
-    "name": "Jo"
+    "name": "Jo",
+    "kind": "name"
   },
   {
     "filename": "37-Beth.mp3",
     "number": "37",
-    "name": "Beth"
+    "name": "Beth",
+    "kind": "name"
   },
   {
     "filename": "38--Subtle-shitting-it.mp3",
     "number": "38",
-    "name": "Subtle shitting it"
+    "name": "shitting it",
+    "kind": "subtle"
   },
   {
     "filename": "39-Elisa.mp3",
     "number": "39",
-    "name": "Elisa"
+    "name": "Elisa",
+    "kind": "name"
   },
   {
     "filename": "41-Simon-e.mp3",
     "number": "41",
-    "name": "Simon e"
+    "name": "Simon e",
+    "kind": "name"
   },
   {
     "filename": "42--Subtle-stillhere.mp3",
     "number": "42",
-    "name": "Subtle stillhere"
+    "name": "stillhere",
+    "kind": "subtle"
   },
   {
-    "filename": "43-Elise-chipotle.mp3",
+    "filename": "43-Elise.mp3",
     "number": "43",
-    "name": "Elise chipotle"
+    "name": "Elise",
+    "kind": "name"
   },
   {
     "filename": "45-Sean.mp3",
     "number": "45",
-    "name": "Sean"
+    "name": "Sean",
+    "kind": "name"
   },
   {
     "filename": "46--Subtle-50yrs.mp3",
     "number": "46",
-    "name": "Subtle 50yrs"
+    "name": "50yrs",
+    "kind": "subtle"
   },
   {
     "filename": "47-Paul.mp3",
     "number": "47",
-    "name": "Paul"
+    "name": "Paul",
+    "kind": "name"
   },
   {
     "filename": "49-simon-j.mp3",
     "number": "49",
-    "name": "simon j"
+    "name": "simon j",
+    "kind": "name"
   },
   {
     "filename": "50--Subtle-the-end-the-end.mp3",
     "number": "50",
-    "name": "Subtle the end the end"
+    "name": "the end the end",
+    "kind": "subtle"
   }
 ]
