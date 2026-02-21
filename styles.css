@@ -213,3 +213,6 @@ body {
   cursor: pointer;
   appearance: none;
 }
+.status {
+  margin-left: auto;
+}
