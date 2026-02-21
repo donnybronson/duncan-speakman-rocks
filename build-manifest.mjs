@@ -1,4 +1,4 @@
-// node build-manifest.mjs
+// build-manifest.mjs
 import { readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,20 +15,26 @@ function numericSort(a, b) {
   return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
 }
 
-function labelFromFilename(filename) {
-  // remove extension
-  const base = filename.replace(/\.[^.]+$/, "");
+function parseLabels(filename) {
+  const base = filename.replace(/\.[^.]+$/, ""); // strip extension
 
-  // extract leading number
-  const match = base.match(/^\d+/);
+  // leading digits (if present)
+  const m = base.match(/^(\d+)\s*[-_. ]?\s*(.*)$/);
 
-  // if a number exists, use it
-  if (match) {
-    return match[0];
+  if (!m) {
+    // no leading number
+    return { number: "", name: base };
   }
 
-  // fallback if no number exists
-  return base;
+  const number = m[1] ?? "";
+  const restRaw = m[2] ?? "";
+
+  // clean the name (rest of filename)
+  const name = restRaw
+    .replace(/[_-]+/g, " ")
+    .trim();
+
+  return { number, name: name || base };
 }
 
 async function main() {
@@ -41,17 +47,16 @@ async function main() {
 
   console.log(`Found ${files.length} audio file(s).`);
 
-  const manifest = files.map((filename) => ({
-    filename,
-    label: labelFromFilename(filename)
-  }));
+  const manifest = files.map((filename) => {
+    const { number, name } = parseLabels(filename);
+    return { filename, number, name };
+  });
 
   await writeFile(OUT_FILE, JSON.stringify(manifest, null, 2), "utf8");
   console.log("Wrote:", OUT_FILE);
 }
 
 main().catch((err) => {
-  console.error("Manifest build failed:");
   console.error(err);
   process.exit(1);
 });
