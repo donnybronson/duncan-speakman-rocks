@@ -159,7 +159,7 @@ body {
 
 /* States */
 .pad.is-ready {
-  background: rgba(30,30,34,0.95);
+  background: rgba(194, 194, 199, 0.95);
   border-color: rgba(255,255,255,0.65);
 
   /* glow */
@@ -169,7 +169,7 @@ body {
 }
 
 .pad.is-playing {
-  background: rgba(255,255,255,0.12);
+  background: rgba(243, 242, 242, 0.9);
   border-color: white;
 
   box-shadow:
