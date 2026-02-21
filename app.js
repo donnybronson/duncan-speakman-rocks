@@ -9,7 +9,7 @@ let currentAudio = null;
 let currentButton = null;
 
 function setStatus(text) {
-  statusEl.textContent = text;
+  if (statusEl) statusEl.textContent = text;
 }
 
 function stopCurrent({ markPlayed = true } = {}) {
@@ -35,7 +35,11 @@ function playSound(src, buttonEl) {
   buttonEl.classList.remove("is-ready", "is-played");
   buttonEl.classList.add("is-playing");
 
-  setStatus(`Playing: ${buttonEl.dataset.name || buttonEl.dataset.number || ""}`.trim());
+  const nowLabel = showNames
+    ? (buttonEl.dataset.name || buttonEl.dataset.number || "")
+    : (buttonEl.dataset.number || buttonEl.dataset.name || "");
+
+  setStatus(`Playing: ${nowLabel}`.trim());
 
   audio.addEventListener("ended", () => {
     if (currentAudio === audio) currentAudio = null;
@@ -57,32 +61,28 @@ function playSound(src, buttonEl) {
 function renderPadLabel(btn) {
   const number = btn.dataset.number || "";
   const name = btn.dataset.name || "";
+  const text = showNames ? (name || number) : (number || name);
 
-  // default: show number; toggle reveals name
-  btn.querySelector(".pad__label").textContent = showNames ? (name || number) : (number || name);
+  const labelEl = btn.querySelector(".pad__label");
+  if (labelEl) labelEl.textContent = text;
 }
 
-function makePad(item, index) {
+function makePad(item) {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "pad is-ready";
-  btn.setAttribute("role", "gridcell");
 
   const number = (item.number ?? "").toString();
   const name = (item.name ?? "").toString();
-  const filename = item.filename;
 
   btn.dataset.number = number;
   btn.dataset.name = name;
 
-  btn.innerHTML = `
-    <div class="pad__label"></div>
-    <div class="pad__meta">${String(index + 1).padStart(2, "0")}</div>
-  `;
-
+  // IMPORTANT: only one visible label element
+  btn.innerHTML = `<div class="pad__label"></div>`;
   renderPadLabel(btn);
 
-  const src = `./sounds/${encodeURIComponent(filename)}`;
+  const src = `./sounds/${encodeURIComponent(item.filename)}`;
 
   btn.addEventListener("click", () => {
     if (currentButton === btn && currentAudio) {
@@ -105,41 +105,45 @@ async function loadManifest() {
   return manifest;
 }
 
+function applyToggleUI() {
+  if (toggleBtn) {
+    toggleBtn.setAttribute("aria-pressed", String(showNames));
+    toggleBtn.textContent = showNames ? "Show numbers" : "Show names";
+  }
+  gridEl.querySelectorAll(".pad").forEach(renderPadLabel);
+}
+
 async function init() {
   try {
     const manifest = await loadManifest();
 
     gridEl.innerHTML = "";
-    manifest.forEach((item, i) => {
+    manifest.forEach((item) => {
       if (!item || !item.filename) return;
-      gridEl.appendChild(makePad(item, i));
+      gridEl.appendChild(makePad(item));
     });
 
     setStatus(manifest.length ? "Ready" : "No sounds found");
 
-    // Toggle control
-    if (toggleBtn) {
-      const applyToggle = () => {
-        toggleBtn.setAttribute("aria-pressed", String(showNames));
-        toggleBtn.textContent = showNames ? "Show numbers" : "Show names";
-        gridEl.querySelectorAll(".pad").forEach(renderPadLabel);
-      };
-
-      toggleBtn.addEventListener("click", () => {
-        showNames = !showNames;
-        applyToggle();
-      });
-
-      // optional keyboard shortcut: L
-      window.addEventListener("keydown", (e) => {
-        if (e.key.toLowerCase() === "l") {
-          showNames = !showNames;
-          applyToggle();
-        }
-      });
-
-      applyToggle();
+    if (!toggleBtn) {
+      console.warn('Toggle button not found. Add <button id="toggleLabels">…</button> to index.html');
+      return;
     }
+
+    toggleBtn.addEventListener("click", () => {
+      showNames = !showNames;
+      applyToggleUI();
+    });
+
+    // Optional keyboard shortcut: L
+    window.addEventListener("keydown", (e) => {
+      if (e.key.toLowerCase() === "l") {
+        showNames = !showNames;
+        applyToggleUI();
+      }
+    });
+
+    applyToggleUI();
   } catch (err) {
     console.error(err);
     setStatus("Error loading sounds. Check sounds.json + server.");
