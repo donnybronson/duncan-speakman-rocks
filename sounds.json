@@ -8,67 +8,47 @@
     "label": "01"
   },
   {
-    "filename": "02-Bas.mp3",
-    "label": "02"
-  },
-  {
-    "filename": "03-Ben-j.mp3",
+    "filename": "03-Bas.mp3",
     "label": "03"
   },
   {
-    "filename": "04-Beth.mp3",
+    "filename": "04--mid-sound-things.mp3",
     "label": "04"
   },
   {
-    "filename": "05-Clare-red.mp3",
+    "filename": "05-Ben-j.mp3",
     "label": "05"
   },
   {
-    "filename": "06-Yannick.mp3",
-    "label": "06"
-  },
-  {
-    "filename": "07-parents.mp3",
+    "filename": "07-Sita.mp3",
     "label": "07"
   },
   {
-    "filename": "08-Paul.mp3",
+    "filename": "08-mid-sound-low-profile.mp3",
     "label": "08"
   },
   {
-    "filename": "09-Tineke.mp3",
+    "filename": "09-Clare-red.mp3",
     "label": "09"
   },
   {
-    "filename": "10-Sita.mp3",
-    "label": "10"
-  },
-  {
-    "filename": "11-Simon-e.mp3",
+    "filename": "11-Yannick.mp3",
     "label": "11"
   },
   {
-    "filename": "12-Sarah anderson.mp3",
+    "filename": "12--mid-sound-hipsters.mp3",
     "label": "12"
   },
   {
-    "filename": "12-Sean.mp3",
-    "label": "12"
-  },
-  {
-    "filename": "13-Malcolm-diack.mp3",
+    "filename": "13-parents.mp3",
     "label": "13"
-  },
-  {
-    "filename": "14-Lila.mp3",
-    "label": "14"
   },
   {
     "filename": "15-KD.mp3",
     "label": "15"
   },
   {
-    "filename": "16-Kate Yedigaroff.mp3",
+    "filename": "16--mid-sound-druqks.mp3",
     "label": "16"
   },
   {
@@ -76,15 +56,11 @@
     "label": "17"
   },
   {
-    "filename": "18-Jo.mp3",
-    "label": "18"
-  },
-  {
     "filename": "19-Jess.mp3",
     "label": "19"
   },
   {
-    "filename": "20-Elisa.mp3",
+    "filename": "20--mid-sound-woolies.mp3",
     "label": "20"
   },
   {
@@ -92,11 +68,83 @@
     "label": "21"
   },
   {
-    "filename": "22-Elise-chipotle.mp3",
-    "label": "22"
+    "filename": "23-Sarah anderson.mp3",
+    "label": "23"
   },
   {
-    "filename": "22-simon.mp3",
-    "label": "22"
+    "filename": "24--mid-sound-woolies-pt2.mp3",
+    "label": "24"
+  },
+  {
+    "filename": "25-Malcolm-diack.mp3",
+    "label": "25"
+  },
+  {
+    "filename": "27-Lila.mp3",
+    "label": "27"
+  },
+  {
+    "filename": "30--mid-sound-fft.mp3",
+    "label": "30"
+  },
+  {
+    "filename": "31-Kate Yedigaroff.mp3",
+    "label": "31"
+  },
+  {
+    "filename": "33-Tineke.mp3",
+    "label": "33"
+  },
+  {
+    "filename": "34--mid-sound-beacon.mp3",
+    "label": "34"
+  },
+  {
+    "filename": "35-Jo.mp3",
+    "label": "35"
+  },
+  {
+    "filename": "37-Beth.mp3",
+    "label": "37"
+  },
+  {
+    "filename": "38--mid-sound-shitting-it.mp3",
+    "label": "38"
+  },
+  {
+    "filename": "39-Elisa.mp3",
+    "label": "39"
+  },
+  {
+    "filename": "41-Simon-e.mp3",
+    "label": "41"
+  },
+  {
+    "filename": "42--mid-sound-stillhere.mp3",
+    "label": "42"
+  },
+  {
+    "filename": "43-Elise-chipotle.mp3",
+    "label": "43"
+  },
+  {
+    "filename": "45-Sean.mp3",
+    "label": "45"
+  },
+  {
+    "filename": "46--mid-sound-50yr.mp3",
+    "label": "46"
+  },
+  {
+    "filename": "47-Paul.mp3",
+    "label": "47"
+  },
+  {
+    "filename": "49-simon-j.mp3",
+    "label": "49"
+  },
+  {
+    "filename": "50--the-end-the-end.mp3",
+    "label": "50"
   }
 ]
